@@ -116,3 +116,12 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta  ${PORT}`);
 });
+
+// Middleware CORS
+app.use(
+  cors({
+    origin: "https://cfepmae.vercel.app", // URL do frontend
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+    credentials: true, // Se estiver utilizando cookies ou autenticação
+  })
+);
