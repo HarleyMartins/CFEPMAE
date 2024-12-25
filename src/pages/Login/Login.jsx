@@ -38,10 +38,13 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        matricula,
-        senha,
-      });
+      const response = await axios.post(
+        "https://cfepmae-production.up.railway.app/login",
+        {
+          matricula,
+          senha,
+        }
+      );
 
       const { token } = response.data; // Obtemos o token do servidor
 

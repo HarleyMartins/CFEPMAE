@@ -41,11 +41,14 @@ const Cards = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:5000/cards", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://cfepmae-production.up.railway.app/cards",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         setMessage(response.data.message);
       } catch (error) {

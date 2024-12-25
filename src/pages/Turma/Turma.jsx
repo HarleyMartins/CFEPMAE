@@ -18,11 +18,14 @@ const Turma = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/turma", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://cfepmae-production.up.railway.app/turma",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         setAlunos(response.data.alunos); // Armazenando os dados dos alunos no estado
       } catch (error) {
